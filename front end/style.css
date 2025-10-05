@@ -1,0 +1,384 @@
+/* ClimateCompare Dashboard Styles */
+
+:root {
+  --bg: #eef6f8;
+  --card: white;
+  --text: #0b2340;
+  --accent: #0066cc;
+  --accent-hover: #0052a3;
+  --border: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg: #0f1720;
+  --card: #1a2332;
+  --text: #e6eef8;
+  --accent: #3aa0ff;
+  --accent-hover: #5bb3ff;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--card);
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.top-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-toggle input {
+  cursor: pointer;
+}
+
+.top-controls button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.top-controls button:hover {
+  background: var(--accent-hover);
+}
+
+/* Main Layout */
+main#appRoot {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.left-panel {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Cards */
+.map-card,
+.controls-card,
+.summary-card,
+.chart-card,
+.prob-card,
+.aq-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: background 0.3s ease;
+}
+
+.map-card h3,
+.controls-card h3,
+.summary-card h3,
+.chart-card h3,
+.prob-card h3,
+.aq-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Map */
+#map {
+  height: 320px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  margin-bottom: 12px;
+}
+
+#pinsInfo {
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  min-height: 50px;
+}
+
+#pinsInfo em {
+  color: #888;
+}
+
+.pin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pin-item:last-child {
+  border-bottom: none;
+}
+
+.removePin {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.removePin:hover {
+  background: #cc0000;
+}
+
+#clearPins {
+  width: 100%;
+  background: #ff7043;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+#clearPins:hover {
+  background: #f4511e;
+}
+
+/* Form Controls */
+label {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input[type="date"],
+select,
+input[type="number"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  width: 100%;
+  font-size: 14px;
+  margin-top: 6px;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.2s ease;
+}
+
+input[type="date"]:focus,
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#getData {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: background 0.2s ease;
+}
+
+#getData:hover {
+  background: var(--accent-hover);
+}
+
+#getData:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Summary Text */
+#textSummary {
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Charts */
+canvas {
+  background: transparent !important;
+  border-radius: 8px;
+  max-height: 350px;
+}
+
+.chart-card,
+.prob-card {
+  min-height: 300px;
+}
+
+/* Air Quality */
+.aq-item {
+  padding: 10px;
+  margin: 8px 0;
+  background: var(--bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  main#appRoot {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .left-panel {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  .top-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main#appRoot {
+    padding: 12px;
+  }
+
+  #map {
+    height: 250px;
+  }
+
+  canvas {
+    max-height: 250px;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.map-card,
+.controls-card,
+.summary-card,
+.chart-card,
+.prob-card,
+.aq-card {
+  animation: fadeIn 0.4s ease-out;
+}

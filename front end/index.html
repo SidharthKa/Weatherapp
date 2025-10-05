@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>NASA Weather + AQ Dashboard</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- html2canvas and jsPDF for PDF export -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>NASA Weather & Air Quality Dashboard</h1>
+    <div class="top-controls">
+      <label class="theme-toggle">
+        <input id="themeToggle" type="checkbox" />
+        <span id="themeLabel">🌙 Dark</span>
+      </label>
+      <button id="exportPdf">Download PDF Report</button>
+    </div>
+  </header>
+
+  <main id="appRoot">
+    <section class="left-panel">
+      <div class="map-card">
+        <h3>Map - click to add a pin (max 2)</h3>
+        <div id="map"></div>
+        <div id="pinsInfo">No locations selected</div>
+        <button id="clearPins">Clear Pins</button>
+      </div>
+
+      <div class="controls-card">
+        <h3>Data Options</h3>
+
+        <label>Parameter
+          <select id="parameter">
+            <option value="T2M">Temperature (°C)</option>
+            <option value="PRECTOTCORR">Precipitation (mm/day)</option>
+            <option value="WS10M">Wind Speed (m/s)</option>
+          </select>
+        </label>
+
+        <label>Start date
+          <input id="start-date" type="date" />
+        </label>
+
+        <label>End date
+          <input id="end-date" type="date" />
+        </label>
+
+        <label>Threshold (for probability, e.g. 30 for 30°C)
+          <input id="threshold" type="number" placeholder="e.g. 30" />
+        </label>
+
+        <button id="getData">Get Data & Analyze</button>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <div class="summary-card" id="summaryCard">
+        <h3>Text Summary</h3>
+        <div id="textSummary">No data yet — select locations & date range, then click Get Data.</div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Time Series / Comparison</h3>
+        <canvas id="timeChart"></canvas>
+      </div>
+
+      <div class="prob-card">
+        <h3>Probability Analysis</h3>
+        <canvas id="probChart"></canvas>
+      </div>
+
+      <div class="aq-card">
+        <h3>Air Quality (from NASA GES DISC)</h3>
+        <div id="aqSummary">Air quality data not fetched yet.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data sources: NASA POWER API (weather) and NASA GES DISC (air quality) - powered by your backend proxy.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
