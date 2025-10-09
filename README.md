@@ -1,6 +1,6 @@
 # 🌍 ClimateCompare Dashboard
 
-> **NASA Space Apps Challenge 2024**  
+> **NASA Space Apps Challenge 2025**  
 > A multi-location weather intelligence platform powered by NASA POWER API
 
 [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/downloads/)
@@ -84,8 +84,6 @@ Traditional weather data tools are often complex, require specialized knowledge,
 ### Live Demo
 [Coming Soon - Add deployed URL here]
 
-### Quick Start Video
-[Coming Soon - Add demo video here]
 
 ### Sample Analysis
 ```
@@ -424,7 +422,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 MIT License
 
-Copyright (c) 2024 ClimateCompare Team
+Copyright (c) 2025 ClimateCompare Team
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -508,7 +506,7 @@ If you find this project useful, please consider giving it a star ⭐ on GitHub!
 
 ## 📅 Version History
 
-### v1.0.0 (October 2024)
+### v1.0.0 (October 2025)
 - Initial release
 - Core weather data comparison functionality
 - Interactive map with pin selection
@@ -536,7 +534,7 @@ If you find this project useful, please consider giving it a star ⭐ on GitHub!
 
 <div align="center">
 
-**Built with ❤️ for NASA Space Apps Challenge 2024**
+**Built with ❤️ for NASA Space Apps Challenge 2025**
 
 [Report Bug](https://github.com/yourusername/climatecompare/issues) · 
 [Request Feature](https://github.com/yourusername/climatecompare/issues) · 
