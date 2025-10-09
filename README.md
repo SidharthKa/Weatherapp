@@ -435,9 +435,9 @@ in the Software without restriction...
 
 ## 👥 Team
 
-**Team Name:** [Your Team Name]  
-**Challenge:** NASA Space Apps Challenge 2024  
-**Category:** [Your Category]
+**Team Name:** [ASPIRE]  
+**Challenge:** NASA Space Apps Challenge 2025  
+
 
 **Team Members:**
 - **[SIDHARTH K A]** - Backend Development & API Integration
